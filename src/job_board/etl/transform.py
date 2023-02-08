@@ -7,7 +7,7 @@ class Transform():
     @staticmethod
     def transform(
             df:pd.DataFrame,
-            #df_regions:pd.DataFrame, # will be uncommented when extract.py reads regions.csv
+            df_regions:pd.DataFrame, # will be uncommented when extract.py reads regions.csv
             request_id: str
         )->pd.DataFrame:
         '''
