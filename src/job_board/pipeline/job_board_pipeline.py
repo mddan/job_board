@@ -42,18 +42,21 @@ def pipeline_per_job_title():
     # extract data 
     try:
         
-        df = Extract.extract(
+        request_id, df = Extract.extract(
             job_title=config["extract"]["title"], 
             api_key_id=api_key_id
         )
+
+        df_region_codes = Extract.extract_exchange_codes("job_board/data/usa_regions.csv")
+
         logging.info(f"Extraction complete for job title : {config['extract']['title']}")
 
         logging.info("Commencing transformation")
         # transform data
         df_transform = Transform.transform(
-            title_list=title_list,
-            request_id_list=request_id_list,
-            df_list=df_list
+            df=df,
+            df_regions=df_region_codes,
+            request_id=request_id
         )
         logging.info("Transformation complete")
 

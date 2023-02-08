@@ -42,3 +42,12 @@ class Extract():
         # read json data to a dataframe 
         df = pd.json_normalize(data=response_data, meta=["symbol"])
         return request_id, df
+    
+    @staticmethod
+    def extract_region_codes(fp:str)->pd.DataFrame:
+        """
+        Reads usa region codes CSV file and returns a dataframe.
+        - fp: filepath to the exchange codes CSV file
+        """
+        df = pd.read_csv(fp)
+        return df
