@@ -3,21 +3,42 @@ import requests
 
 class Extract():
     '''
-    docstring here
+    Extract Class in the Job Board ETL Pipeline
     '''
-    ## code here
-    pass
 
+    @staticmethod
+    def extract(
+            job_title:str, 
+            api_key_id:str, 
+            num_pages: str = 20,
+            job_posting_date: str = "today"
+        )->pd.DataFrame:
+        """
+        Extract Job Openings Data from the JSearch API (Rapid API). 
+        JSearch API (Rapid API) Search for jobs posted on LinkedIn, Indeed, Glassdoor, ZipRecruiter, BeBee and many others, all in a single API
+        - job_title: a string identifying job title e.g. data analyst, data engineer etc 
+        - api_key_id: api key id from JSearch API (Rapid API)
+        
+        Returns: 
+        - DataFrame with Job Posting data for the requested job_posting_date 
+        """
+        
+        rapid_api_host = "jsearch.p.rapidapi.com"
+        base_url = f"https://{rapid_api_host}/search"
 
-url = "https://jsearch.p.rapidapi.com/search"
+        headers = {
+                "X-RapidAPI-Key": api_key_id,
+                "X-RapidAPI-Host": rapid_api_host
+            }
+        
+        querystring = {"query": f"{job_title} in USA", "num_pages": num_pages, "date_posted":job_posting_date}
 
-querystring = {"query":"\"Data Analyst\" in USA ","num_pages":"20"}
-
-headers = {
-	"X-RapidAPI-Key": "5fec918ab1msh2089eaf59c35a4fp1d2106jsnc87acf303a5f",
-	"X-RapidAPI-Host": "jsearch.p.rapidapi.com"
-}
-
-response = requests.request("GET", url, headers=headers, params=querystring)
-
-print(response.text)
+        response_data = []
+            
+        response = requests.get(base_url, params=querystring, headers=headers)
+        if response.json().get("data") is not None: 
+            response_data.extend(response.json().get("data"))
+            request_id = response.json().get("request_id")
+        # read json data to a dataframe 
+        df = pd.json_normalize(data=response_data, meta=["symbol"])
+        return request_id, df
