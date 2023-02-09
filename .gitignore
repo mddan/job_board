@@ -128,3 +128,11 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# user files 
+.DS_Store
+config.sh
+config.bat
+config.txt
+.user.yml
+
