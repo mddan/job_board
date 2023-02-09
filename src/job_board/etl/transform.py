@@ -7,7 +7,7 @@ class Transform():
     @staticmethod
     def transform(
             df:pd.DataFrame,
-            df_regions:pd.DataFrame, # will be uncommented when extract.py reads regions.csv
+            df_regions:pd.DataFrame,
             request_id: str
         )->pd.DataFrame:
         '''
@@ -23,8 +23,6 @@ class Transform():
         df["request_id"] = request_id
 
         # Join region
-        fp = "data/usa_regions.csv"  # to be put into Extract
-        df_regions = pd.read_csv(fp) # to be put into Extract
         df = pd.merge(left=df, right=df_regions, left_on="job_state", right_on="state_code")
 
         # Column renaming
@@ -101,7 +99,6 @@ class Transform():
     @staticmethod
     def check_cloud(string):
         result = False
-        #if re.search("AWS|GCP|Snowflake|Azure", string):
         if re.search("AWS|GCP|Snowflake|Azure|[Cc]loud", string):
             result = True
         return result
