@@ -24,20 +24,20 @@ def pipeline_per_job_title(config, run_log)->bool:
 
     api_key_id = os.environ.get("api_key_id")
 
-    # metadata_logger = MetadataLogging()
+    metadata_logger = MetadataLogging()
         
-    # metadata_logger_table = f"metadata_log_{config['load']['database']['target_table_name']}"
-    # metadata_logger_run_id = metadata_logger.get_latest_run_id(db_table=metadata_logger_table)
-    # metadata_logger.log(
-    #     run_timestamp=dt.datetime.now(),
-    #     run_status="started",
-    #     run_id=metadata_logger_run_id, 
-    #     run_config=config,
-    #     db_table=metadata_logger_table
-    # )
+    metadata_logger_table = f"metadata_log_{config['load']['database']['target_table_name']}"
+    metadata_logger_run_id = metadata_logger.get_latest_run_id(db_table=metadata_logger_table)
+    metadata_logger.log(
+        run_timestamp=dt.datetime.now(),
+        run_status="started",
+        run_id=metadata_logger_run_id, 
+        run_config=config,
+        db_table=metadata_logger_table
+    )
 
-    # logging.info(f"Commencing pipeline for {config['extract']['stock_ticker']}⏳")
-    # logging.info("Commencing extraction")
+    logging.info(f"Commencing pipeline for {config['extract']['title']}⏳")
+    logging.info("Commencing extraction")
     
     # extract data 
     try:
@@ -83,27 +83,27 @@ def pipeline_per_job_title(config, run_log)->bool:
         logging.info("Database load complete")
         logging.info(f"Pipeline for {config['extract']['title']} complete ✅")
 
-        # metadata_logger.log(
-        #     run_timestamp=dt.datetime.now(),
-        #     run_status="completed",
-        #     run_id=metadata_logger_run_id, 
-        #     run_config=config,
-        #     run_log=run_log.getvalue(),
-        #     db_table=metadata_logger_table
-        # )
+        metadata_logger.log(
+            run_timestamp=dt.datetime.now(),
+            run_status="completed",
+            run_id=metadata_logger_run_id, 
+            run_config=config,
+            run_log=run_log.getvalue(),
+            db_table=metadata_logger_table
+        )
         
         
         return True
     except BaseException as e: 
         logging.exception(e)
-        # metadata_logger.log(
-        #     run_timestamp=dt.datetime.now(),
-        #     run_status="error",
-        #     run_id=metadata_logger_run_id, 
-        #     run_config=config,
-        #     run_log=run_log.getvalue(),
-        #     db_table=metadata_logger_table
-        # )
+        metadata_logger.log(
+            run_timestamp=dt.datetime.now(),
+            run_status="error",
+            run_id=metadata_logger_run_id, 
+            run_config=config,
+            run_log=run_log.getvalue(),
+            db_table=metadata_logger_table
+        )
     print(run_log.getvalue())
 
 def pipeline()->bool:
