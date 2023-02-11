@@ -60,6 +60,10 @@ class Transform():
         # Keep and order columns of interest only that will be kept in final dataframe
         df = df[keep_columns]
 
+        print(df.columns)
+        print(df.head())
+        print(df.dtypes)
+
         return df
 
     @staticmethod

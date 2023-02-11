@@ -1,5 +1,5 @@
 import pandas as pd 
-from sqlalchemy import Table, Column, Integer, String, MetaData, Float 
+from sqlalchemy import Table, Boolean, Column, Integer, String, MetaData, Float 
 from sqlalchemy.dialects import postgresql
 import os  
 
@@ -41,18 +41,38 @@ class Load():
         elif load_target == "database": 
             # create target table if not exists 
             meta = MetaData()
-            job_board_data_analyst_table = Table(
+            job_board_data_job_type_table = Table(
                 target_table_name, meta, 
-                Column("timestamp", String, primary_key=True),
-                Column("exchange", String, primary_key=True),
-                Column("price", Float),
-                Column("size", Integer)
+                Column("job_id", String, primary_key=True),
+                Column("request_id", String),
+                Column("employer_name", String),
+                Column("employer_website", String),
+                Column("job_employment_type", String),
+                Column("job_title", String),
+                Column("job_description", String),
+                Column("job_is_remote", Boolean),
+                Column("job_year", Integer),
+                Column("job_month", Integer),
+                Column("job_day", Integer),
+                Column("job_city", String),
+                Column("job_state", String),
+                Column("job_region", String),
+                Column("job_country", String),
+                Column("job_benefits_number", Integer),
+                Column("job_required_years_xp", Float),
+                Column("job_highest_req_edu", String),
+                Column("job_min_salary", Float),
+                Column("job_max_salary", Float),
+                Column("job_qualifications_number", Integer),
+                Column("job_req_python", Boolean),
+                Column("job_req_sql", Boolean),
+                Column("job_req_cloud", Boolean)
             )
             meta.create_all(target_database_engine) # creates table if it does not exist 
-            insert_statement = postgresql.insert(stock_price_tesla_table).values(df.to_dict(orient='records'))
+            insert_statement = postgresql.insert(job_board_data_job_type_table).values(df.to_dict(orient='records'))
             upsert_statement = insert_statement.on_conflict_do_update(
-                index_elements=['timestamp', 'exchange'],
-                set_={c.key: c for c in insert_statement.excluded if c.key not in ['timestamp','exchange']})
+                index_elements=['job_id'],
+                set_={c.key: c for c in insert_statement.excluded if c.key not in ['job_id']})
             target_database_engine.execute(upsert_statement)
 
         else:
