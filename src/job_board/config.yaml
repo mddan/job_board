@@ -6,7 +6,7 @@ job_titles:
       load:
         file: 
           load_target: "file"
-          target_file_directory: "../data"
+          target_file_directory: "job_board/data"
           target_file_name: "data_analyst.parquet"
         database:
           load_target: "database"
@@ -19,7 +19,7 @@ job_titles:
       load:
         file: 
           load_target: "file"
-          target_file_directory: "../data"
+          target_file_directory: "job_board/data"
           target_file_name: "data_engineer.parquet"
         database:
           load_target: "database"
@@ -32,7 +32,7 @@ job_titles:
       load:
         file: 
           load_target: "file"
-          target_file_directory: "../data"
+          target_file_directory: "job_board/data"
           target_file_name: "data_scientist.parquet"
         database:
           load_target: "database"

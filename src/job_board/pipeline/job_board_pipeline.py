@@ -47,7 +47,7 @@ def pipeline_per_job_title(config, run_log)->bool:
             api_key_id=api_key_id
         )
 
-        df_region_codes = Extract.extract_region_codes("../data/usa_regions.csv")
+        df_region_codes = Extract.extract_region_codes("job_board/data/usa_regions.csv")
 
         logging.info(f"Extraction complete for job title : {config['extract']['title']}")
 
@@ -81,7 +81,7 @@ def pipeline_per_job_title(config, run_log)->bool:
             target_table_name=config["load"]["database"]["target_table_name"]
         )  
         logging.info("Database load complete")
-        logging.info(f"Pipeline for {config['extract']['stock_ticker']} complete ✅")
+        logging.info(f"Pipeline for {config['extract']['title']} complete ✅")
 
         # metadata_logger.log(
         #     run_timestamp=dt.datetime.now(),
@@ -112,7 +112,7 @@ def pipeline()->bool:
     logging.basicConfig(level=logging.INFO, stream=run_log,format="[%(levelname)s][%(asctime)s][%(filename)s]: %(message)s") # format: https://docs.python.org/3/library/logging.html#logging.LogRecord
     
     # get yaml config 
-    with open("../config.yaml") as stream:
+    with open("job_board/config.yaml") as stream:
         config = yaml.safe_load(stream)
 
     for job_title in config["job_titles"]:
