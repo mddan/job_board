@@ -105,7 +105,7 @@ _Below is an example of how you can instruct your audience on installing and set
    ```sh
    git clone  https://github.com/mddan/job_board.git
    ```
-3. Install NPM packages
+3. Install packages
    ```sh
    install requirements.txt
    ```
@@ -127,30 +127,28 @@ Use this space to show useful examples of how a project can be used. Additional 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Data extraction: a. Retrieve the Jobs data from the API using a suitable extraction method (e.g., REST API calls, scraping, etc.)
-Data transformation: a. Clean the raw data to ensure it is in the desired format (e.g., removing duplicates, handling missing values, etc.). b. Filter the data only to include the desired jobs (e.g., data analyst, data engineer, and data scientist). c. Transform the data into a structured format (e.g., converting to a tabular form or creating a data model).
-Data loading: a. Load the transformed data into a Postgres database. b. Create the necessary tables and schemas in the database to store the data. c. Use an efficient data loading method (e.g., upsert, etc.) to populate the database.
-Incremental extraction and loading: a. Set up a process to regularly extract new data from the API and update the database with the latest information. b. Ensure that the incremental process is designed to handle large amounts of data and maintain the integrity and accuracy of the information.
-Data hosting: a. Host the database on AWS. b. Use AWS services (e.g., RDS, EC2, S3, etc.) to ensure the robustness and reliability of the pipeline.
-
+ 
 <!-- ROADMAP -->
 ## Roadmap
 
 - [X] **`Data extraction:`**
-      - [X]  Set up API for data extraction 
-      - [X] Retrieve the Jobs data from the API using a suitable extraction method (API calls)
+    - [X]  Set up API for data extraction 
+    - [X] Retrieve the Jobs data from the API using a suitable extraction method (API calls)
 - [X] **`Data transformation:`**
-      - [X] Clean the raw data to ensure it is in the desired format (e.g., removing duplicates, handling missing values, etc.).
-      - [X] Filter the data only to include the desired jobs (e.g., data analyst, data engineer, and data scientist).
-      - [X]  Transform the data into a structured format (e.g., converting to a tabular form or creating a data model).
+    - [X] Clean the raw data to ensure it is in the desired format (e.g., removing duplicates, handling missing values, etc.).
+    - [X] Filter the data only to include the desired jobs (e.g., data analyst, data engineer, and data scientist).
+    - [X]  Transform the data into a structured format (e.g., converting to a tabular form or creating a data model).
 - [X] **`Data loading:`**
-      - [X] Create the necessary tables and schemas in the Postgres database to store the data
-      - [X] Load the transformed data into the database.
-      - [X] Use an efficient data loading method (e.g., upsert, etc.) to populate the database.
+    - [X] Create the necessary tables and schemas in the Postgres database to store the data
+    - [X] Load the transformed data into the database.
+    - [X] Use an efficient data loading method (e.g., upsert, etc.) to populate the database.
 - [X] **`Create a data Pipeline`**
 - [X] **`Incremental extraction and loading:`**
-      - [X] Set up a process to regularly extract new data from the API and update the database with the latest information.
-      - [X] Ensure that the incremental process is designed to handle large amounts of data and maintain the integrity and accuracy of the information.
+    - [X] Set up a process to regularly extract new data from the API and update the database with the latest information.
+    - [X] Ensure that the incremental process is designed to handle large amounts of data and maintain the integrity and accuracy of the information.
+- [X] **`Data Hosting :`**
+    - [X] Host the database on AWS
+    - [X] Use AWS services (e.g., RDS, EC2, S3, etc.) to ensure the robustness and reliability of the pipeline.
 
  
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
