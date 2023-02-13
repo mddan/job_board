@@ -1,5 +1,6 @@
 import pandas as pd 
 import datetime as dt
+import math
 import re
 
 class Transform():
@@ -59,11 +60,15 @@ class Transform():
         # Keep and order columns of interest only that will be kept in final dataframe
         df = df[keep_columns]
 
+        print(df.columns)
+        print(df.head())
+        print(df.dtypes)
+
         return df
 
     @staticmethod
     def apply_len(list_input):
-        if list_input == None:
+        if list_input is None or isinstance(list_input, float):
             length = 0
         else:
             length = len(list_input)

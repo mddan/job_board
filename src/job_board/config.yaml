@@ -6,11 +6,11 @@ job_titles:
       load:
         file: 
           load_target: "file"
-          target_file_directory: "trading_price/data"
-          target_file_name: "tesla.parquet"
+          target_file_directory: "job_board/data"
+          target_file_name: "data_analyst.parquet"
         database:
           load_target: "database"
-          target_table_name: "tesla_stock"
+          target_table_name: "data_analyst_job"
 
   - job_title: 
       extract:
@@ -19,11 +19,11 @@ job_titles:
       load:
         file: 
           load_target: "file"
-          target_file_directory: "trading_price/data"
-          target_file_name: "apple.parquet"
+          target_file_directory: "job_board/data"
+          target_file_name: "data_engineer.parquet"
         database:
           load_target: "database"
-          target_table_name: "apple_stock"
+          target_table_name: "data_engineer_job"
   
   - job_title: 
       extract:
@@ -32,8 +32,8 @@ job_titles:
       load:
         file: 
           load_target: "file"
-          target_file_directory: "trading_price/data"
-          target_file_name: "amazon.parquet"
+          target_file_directory: "job_board/data"
+          target_file_name: "data_scientist.parquet"
         database:
           load_target: "database"
-          target_table_name: "amazon_stock"
+          target_table_name: "data_scientist_job"
