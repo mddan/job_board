@@ -132,20 +132,27 @@ Use this space to show useful examples of how a project can be used. Additional 
 ## Roadmap
 
 - [X] **`Data extraction:`**
-    - [X]  Set up API for data extraction 
+    - [X] Set up API for data extraction 
     - [X] Retrieve the Jobs data from the API using a suitable extraction method (API calls)
+    - [X] Set up live data update and incremental extract 
 - [X] **`Data transformation:`**
     - [X] Clean the raw data to ensure it is in the desired format (e.g., removing duplicates, handling missing values, etc.).
+    - [X] Use the following transformation techniques :  renaming columns, joining, grouping, typecasting, data filtering, sorting, and aggregating 
     - [X] Filter the data only to include the desired jobs (e.g., data analyst, data engineer, and data scientist).
-    - [X]  Transform the data into a structured format (e.g., converting to a tabular form or creating a data model).
+    - [X] Transform the data into a structured format (e.g., converting to a tabular form or creating a data model).
 - [X] **`Data loading:`**
     - [X] Create the necessary tables and schemas in the Postgres database to store the data
     - [X] Load the transformed data into the database.
     - [X] Use an efficient data loading method (e.g., upsert, etc.) to populate the database.
+    - [X] Set up Incremental and upsert load
 - [X] **`Create a data Pipeline`**
+    - [X] Build a docker image using a Dockerfile
+    - [X] Test that the Docker container is runing locally
 - [X] **`Incremental extraction and loading:`**
     - [X] Set up a process to regularly extract new data from the API and update the database with the latest information.
     - [X] Ensure that the incremental process is designed to handle large amounts of data and maintain the integrity and accuracy of the information.
+- [X] **`Implement unit tests`**
+    - [X] Write pipeline metadata logs to a database table
 - [X] **`Data Hosting :`**
     - [X] Host the database on AWS
     - [X] Use AWS services (e.g., RDS, EC2, S3, etc.) to ensure the robustness and reliability of the pipeline.
