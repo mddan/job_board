@@ -14,11 +14,11 @@ Job Board Data Camp ETL project 1 Group 4
 
 Revision History
 
-| **Version** | **Author** | **Date** | **Description** |
-|-------------|------------|----------|-----------------|
-|             |            |          |                 |
-|             |            |          |                 |
-|             |            |          |                 |
+| **Version** | **Authors**           | **Date**  | **Description** |
+|-------------|-----------------------|-----------|-----------------|
+|             |**Daniel Marinescu**   |Feb/16/2023|                 |
+|        1.0  |**Vasanth Nair**       |           |                 |
+|             |**Christian Freeman**  |           |                 |
 
 **Project Plan**
 <!-- TABLE OF CONTENTS -->
