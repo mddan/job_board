@@ -68,18 +68,26 @@ The final result should be hosted on AWS, taking advantage of its various servic
 ### Built With
 
 The team used a variety of tools in this project, including `Postgres`,`Python`, `Git`,`Docker`,`AWS` and `Visual Studio`.
-   - **Postgres** was used as the primary database to store and manage the data extracted from the pipeline.
-   - **Python** was used for developing custom scripts to perform data transformations and manipulation. Its powerful libraries, such as Pandas and NumPy, were utilized for data manipulation.
-   - **Git** was used for version control to manage the codebase and collaborate with other team members.
-   - **AWS** was used as the cloud platform to host the applications, store, and leverage various services for data hosting.
-   - **Visual Studio** was used as the integrated development environment (IDE) to write and debug code, as well as to collaborate with other team members.
+ 
 
-* ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
-* ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-* ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
-* ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
-* ![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)
-* ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+* ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white) -- **`Postgres`** was used as the primary database to store and manage the data extracted from the pipeline.
+
+
+* ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) -- **`Python`** was used for developing custom scripts to perform data transformations and manipulation. Its powerful libraries, such as Pandas and NumPy, were utilized for data manipulation.
+
+
+* ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)  -- **`Git`** was used for version control to manage the codebase and collaborate with other team members.
+
+
+* ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white) -- **`Docker`** was used to create isolated environments for development, testing, and production, allowing for easy and efficient deployment of the applications.
+
+
+* ![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white) -- **`AWS`** was used as the cloud platform to host the applications, store, and leverage various services for data hosting.
+
+
+* ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)  -- **`Visual Studio`** was used as the integrated development environment (IDE) to write and debug code, as well as to collaborate with other team members.
+
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
