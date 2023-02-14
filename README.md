@@ -67,7 +67,12 @@ The final result should be hosted on AWS, taking advantage of its various servic
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+The team used a variety of tools in this project, including `Postgres`,`Python`, `Git`,`Docker`,`AWS` and `Visual Studio`.
+   - **Postgres** was used as the primary database to store and manage the data extracted from the pipeline.
+   - **Python** was used for developing custom scripts to perform data transformations and manipulation. Its powerful libraries, such as Pandas and NumPy, were utilized for data manipulation.
+   - **Git** was used for version control to manage the codebase and collaborate with other team members.
+   - **AWS** was used as the cloud platform to host the applications, store, and leverage various services for data hosting.
+   - **Visual Studio** was used as the integrated development environment (IDE) to write and debug code, as well as to collaborate with other team members.
 
 * ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
 * ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
