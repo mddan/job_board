@@ -31,6 +31,12 @@ class Transform():
             "region": "job_region"
         })
 
+        # Sort by most recent posting first
+        df = df.sort_values(by="job_posted_at_datetime_utc", ascending=False).reset_index()
+
+        # Filter to only full-time positions
+        df = df[df["job_employment_type"]=="FULLTIME"]
+
         # Parse out YEAR, MONTH, DAY
         df["job_year"] = df["job_posted_at_datetime_utc"].apply(lambda x: dt.datetime.strptime(x, "%Y-%m-%dT%H:%M:%S.%fZ").year)
         df["job_month"] = df["job_posted_at_datetime_utc"].apply(lambda x: dt.datetime.strptime(x, "%Y-%m-%dT%H:%M:%S.%fZ").month)
