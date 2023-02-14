@@ -15,7 +15,9 @@ import time
 
 def pipeline_per_job_title(config, run_log)->bool:
     '''
-    docstring here
+    Pipeline function to run extraction, transformation, and loading (ETL) per job title. Takes in:
+    - Config file with job title specfication and other target parameters
+    - run_log parameter (StringIO)
     '''
     
     # start the streamIO from a clean slate 
@@ -107,6 +109,9 @@ def pipeline_per_job_title(config, run_log)->bool:
     print(run_log.getvalue())
 
 def pipeline()->bool:
+    '''
+    Iteratively runs the pipeline_per_job_title job per job title in the config file
+    '''
     print("job running")
     run_log = StringIO()
     logging.basicConfig(level=logging.INFO, stream=run_log,format="[%(levelname)s][%(asctime)s][%(filename)s]: %(message)s") # format: https://docs.python.org/3/library/logging.html#logging.LogRecord

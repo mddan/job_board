@@ -4,6 +4,12 @@ from sqlalchemy import Table, Column, Integer, String, MetaData, Float, JSON
 from sqlalchemy import insert, select, func
 
 class MetadataLogging():
+    '''
+    Metadata logging class containing functions to:
+    - Create target table when it doesn't exist
+    - Get latest run id
+    - Write to the run log
+    '''
 
     def __init__(self):
         self.engine = PostgresDB.create_pg_engine()
