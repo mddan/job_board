@@ -2,17 +2,17 @@
 Job Board Data Camp ETL project 1 Group 4
 # Editing from a template in progress ....
 
-{{ Project Name }}
+## **Project Name: Job Board ETL Project**
 
-**Team Name GROUP 4**
+## **Team Name: GROUP 4**
 
 {{ Company Name }}
 
- **Document Version 1**
+ ## **Document Version 1**
 
 **DATE : Feb 16, 2023**
 
-Revision History
+## **Revision History**
 
 | **Version** | **Authors**           | **Date**  | **Description** |
 |-------------|-----------------------|-----------|-----------------|
@@ -20,7 +20,7 @@ Revision History
 |        1.0  |**Vasanth Nair**       |           |                 |
 |             |**Christian Freeman**  |           |                 |
 
-**Project Plan**
+## **Project Plan**
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
