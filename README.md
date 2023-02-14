@@ -4,15 +4,13 @@ Job Board Data Camp ETL project 1 Group 4
 
 {{ Project Name }}
 
-Project Plan
-
-{{ Team Name }}
+**Team Name GROUP 4**
 
 {{ Company Name }}
 
-{{ Document Version }}
+ **Document Version 1**
 
-{{DATE}}
+**DATE : Feb 16, 2023**
 
 Revision History
 
@@ -22,7 +20,7 @@ Revision History
 |             |            |          |                 |
 |             |            |          |                 |
 
-Project Plan
+**Project Plan**
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
@@ -107,7 +105,7 @@ _Below is an example of how you can instruct your audience on installing and set
    ```
 3. Install packages
    ```sh
-   install requirements.txt
+   pip install  -r requirements.txt
    ```
 4. Enter your API in `???`
    ```
