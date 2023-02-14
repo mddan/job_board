@@ -1,12 +1,8 @@
-# job_board
-Job Board Data Camp ETL project 1 Group 4
-# Editing from a template in progress ....
+ 
 
 ## **Project Name: Job Board ETL Project**
 
 ## **Team Name: GROUP 4**
-
-{{ Company Name }}
 
  ## **Document Version 1**
 
@@ -132,7 +128,8 @@ _Below is an example of how you can instruct your audience on installing and set
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+An ETL data pipeline solution is essential for collecting, transforming, and loading data from various sources into a centralized repository. The pipeline benefits data analysts, data scientists, and other data consumers in several ways. It centralizes the data for easy accessibility, standardizes and ensures data quality, consistency, and accuracy, and automates the process of data transformation and scaling up as the data volume grows. Consequently, data consumers can quickly access high-quality, consistent, and easily accessible data for making informed decisions.
+ 
 
  
 
