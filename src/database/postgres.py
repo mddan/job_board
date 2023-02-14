@@ -8,6 +8,8 @@ class PostgresDB():
     '''
     @staticmethod
     def create_pg_engine():
+
+        # fetch environment variables for connection
         db_user = os.environ.get("db_user")
         db_password = os.environ.get("db_password")
         db_server_name = os.environ.get("db_server_name")

@@ -66,6 +66,7 @@ class Transform():
         # Keep and order columns of interest only that will be kept in final dataframe
         df = df[keep_columns]
 
+        # Quick print-out for visual confirmation that output is as expected during process
         print(df.columns)
         print(df.head())
         print(df.dtypes)
@@ -74,6 +75,9 @@ class Transform():
 
     @staticmethod
     def apply_len(list_input):
+        '''
+        Takes in a list, including where it is 'None' and returns its length or zero if empty or None
+        '''
         if list_input is None or isinstance(list_input, float):
             length = 0
         else:
@@ -82,6 +86,9 @@ class Transform():
 
     @staticmethod
     def get_highest_education(row):
+        '''
+        Takes in a row of a dataframe and return the maximum education required (string) based on columns conditions
+        '''
         if row['job_required_education.postgraduate_degree'] == True:
             return 'Postgraduate degree'
         elif row['job_required_education.bachelors_degree'] == True:
@@ -95,6 +102,9 @@ class Transform():
 
     @staticmethod
     def check_python(string):
+        '''
+        Takes in string and return True if finds regex mention of python, else returns False
+        '''
         result = False
         if re.search("[Pp]ython", string):
             result = True
@@ -102,6 +112,9 @@ class Transform():
 
     @staticmethod
     def check_sql(string):
+        '''
+        Takes in string and return True if finds regex mention of sql, else returns False
+        '''
         result = False
         if re.search("[Ss][Qq][Ll]", string):
             result = True
@@ -109,6 +122,9 @@ class Transform():
 
     @staticmethod
     def check_cloud(string):
+        '''
+        Takes in string and return True if finds regex mention of cloud or cloud platforms, else returns False
+        '''
         result = False
         if re.search("AWS|GCP|Snowflake|Azure|[Cc]loud", string):
             result = True

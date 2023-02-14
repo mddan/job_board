@@ -28,6 +28,7 @@ class Load():
         - target_table_name: name of the SQL table to create and/or upsert data to. 
         """
         
+        # Loading based on target. Upsert based on job_id
         if load_target == "file": 
             if load_method == "upsert": 
                 # upsert (update and insert) data to a csv file 
