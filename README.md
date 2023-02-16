@@ -169,7 +169,7 @@ An ETL data pipeline solution is essential for collecting, transforming, and loa
     - [X] Write pipeline metadata logs to a database table
 - [X] **`Data Hosting :`**
     - [X] Host the database on AWS
-    - [X] Use AWS services (e.g., RDS, EC2, S3, etc.) to ensure the robustness and reliability of the pipeline.
+    - [X] Use AWS services (e.g., RDS, EC2, S3, ECR, ECS etc.) to ensure the robustness and reliability of the pipeline.
 
  
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
