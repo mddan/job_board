@@ -90,7 +90,7 @@ The team used a variety of tools in this project, including `Postgres`,`Python`,
 
 
 <!-- GOAls -->
-## GOALS
+## Goals
 
 <p>Building a live and incremental data pipeline solution is to provide a system that can process and deliver data to consumers as quickly as possible. By leveraging real-time data processing, data can be continuously ingested and transformed, ensuring that the data is always up-to-date and available to data consumers with minimal latency. This pipeline solution allows data consumers to work with the most recent data, which is especially important in fast-paced business environments, where real-time data can make all the difference in making critical decisions.</p>
 
@@ -103,7 +103,7 @@ The team used a variety of tools in this project, including `Postgres`,`Python`,
 
 
 <!-- PROJECT CONTEXT -->
-## PROJECT CONTEXT
+## Project Context
 
 <p>Technical recruiters and head-hunting firms in data-relevant fields are constantly in need of not only top candidates, but information about what positions companies are looking to fill for given data roles and all other details pertaining to these roles including salary, technologies, years of experience etc to list a few. With this ETL Job Board project, we would like to help Technical recruiters and head-hunting firms with accurate, relavant and up-to-date data related to data specific roles namely Data Analyst, Data Engineer and Data Scientist.
 </p>
