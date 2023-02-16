@@ -50,6 +50,15 @@
       <ul>
         <li><a href="#running-in-aws-cloud---setup">Running in AWS Cloud - Setup</a></li>
       </ul>
+      <ul>
+        <li><a href="#screenshots-of-aws-components-used">Screenshots of AWS Components Used</a></li>
+      </ul>
+      <ul>
+        <li><a href="#screenshots-of-datasets">Screenshots of Datasets</a></li>
+      </ul>
+      <ul>
+        <li><a href="#screenshots-of-metadata-logs">Screenshots of Metadata Logs</a></li>
+      </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
@@ -228,25 +237,29 @@ db_port=5432
 4. Create docker file and upload the Docker image to AWS ECR.
 5. Create a Cron Schedule in AWS ECS to run the pipeline in a recurring schedule.
 
-#### Scheduled Task in ECS 
-
-<img width="1184" alt="image" src="https://user-images.githubusercontent.com/1815429/219291967-9170e0e6-5dc5-43b1-b69d-87b10e9f40fc.png">
-
-#### ECR hosting Job Board Docker Image
-
-<img width="1103" alt="image" src="https://user-images.githubusercontent.com/1815429/219292060-7fbb1595-00be-4ad0-80c2-a40c1f39cf1e.png">
-
-#### RDS Database Instance
-
-<img width="1105" alt="image" src="https://user-images.githubusercontent.com/1815429/219291798-80016e01-22ba-48eb-9822-5043fa36cf51.png">
+### Screenshots of AWS Components Used
 
 #### IAM Roles Used
 
 <img width="1062" alt="image" src="https://user-images.githubusercontent.com/1815429/219292235-68866722-e034-4956-8a0e-5d11e916c3fa.png">
 
+#### RDS Database Instance
+
+<img width="1105" alt="image" src="https://user-images.githubusercontent.com/1815429/219291798-80016e01-22ba-48eb-9822-5043fa36cf51.png">
+
 #### Env File in S3 Bucket
 
 <img width="1068" alt="image" src="https://user-images.githubusercontent.com/1815429/219292301-6e6e78cb-1315-4c24-a368-d0a2beab3017.png">
+
+#### ECR hosting Job Board Docker Image
+
+<img width="1103" alt="image" src="https://user-images.githubusercontent.com/1815429/219292060-7fbb1595-00be-4ad0-80c2-a40c1f39cf1e.png">
+
+#### Scheduled Task in ECS 
+
+<img width="1184" alt="image" src="https://user-images.githubusercontent.com/1815429/219291967-9170e0e6-5dc5-43b1-b69d-87b10e9f40fc.png">
+
+### Screenshots of Datasets
 
 #### Data Analyst Jobs Dataset
 
@@ -259,6 +272,8 @@ db_port=5432
 #### Data Scientist Jobs Dataset
 
 <img width="1440" alt="image" src="https://user-images.githubusercontent.com/1815429/219293048-fb79cf88-b441-4ad1-a645-af4a1b704849.png">
+
+### Screenshots of Metadata Logs
 
 #### Data Analyst Metadata Log
 
