@@ -139,14 +139,11 @@ _Below is an example of how you can instruct your audience on installing and set
 
 #### Steps
 
-> 1. CD into src/ folder
-> 
-> 2. Run set_python_path.sh / set_python_path.bat file according to your Operating System to set PYTHONPATH
-> 
-> 3. Create a config.sh / config.bat file in src/job_board folder with following content 
->
+1. CD into ```src/``` folder
+2. Run ```. ./set_python_path.sh``` / ```set_python_path.bat``` file according to your Operating System to set **PYTHONPATH**
+3. Create a ```config.sh``` / ```config.bat``` file in ```src/job_board``` folder with following content 
 
-```
+```sh
 export api_key_id=<YOUR_JSEARCH_API_KEY>
 export db_user=<YOUR_POSTGRES_DB_USERNAME>
 export db_password=<YOUR_POSTGRES_DB_PASSWORD>
@@ -154,19 +151,13 @@ export db_server_name=localhost
 export db_database_name=job_board
 export db_port=5432
 ```
+4. Run ```config.sh``` / ```config.bat``` file to set additional environment variables needed to connect to ***JSEARCH API*** and ***POSTGRES DB***
+5. CD back to ```src/``` folder  
+6. Run ```python job_board/pipeline/job_board_pipeline.py``` to run the ETL pipeline locally.
+7. Alternatively instead of running steps 3 thru 6, we can run the ETL pipeline in docker container as follows. 
+8. Create a ```.env``` file with below contents in root project folder
 
->
-> 4. Run config.sh / config.bat file to set additional environment variables needed to connect to JSEARCH API and DB
->  
-> 5. CD back to src/ folder
->  
-> 6. Run python job_board/pipeline/job_board_pipeline.py to run the ETL pipeline locally
->  
-> 7. Alternatively instead of steps 3 thru 6, we can use run the ETL pipeline in docker as follows. Create a .env file with below contents in root project folder
->  
->
-
-```
+```sh
 api_key_id=<YOUR_JSEARCH_API_KEY>
 db_user=<YOUR_POSTGRES_DB_USERNAME>
 db_password=<YOUR_POSTGRES_DB_PASSWORD>
@@ -174,12 +165,8 @@ db_server_name=localhost
 db_database_name=job_board
 db_port=5432
 ```
-
->
-> 8. Run docker build -t job_board:1.0 . to create a docker image for Job Board ETL pipeline program
->
-> 9. Run a container using the above image using docker run --env-file=.env job_board:1.0 to see the ETL pipeline in action.
-> 
+9. Run ```docker build -t job_board:1.0 .``` to create a docker image for Job Board ETL pipeline program
+10. Run a container using the above image using ```docker run --env-file=.env job_board:1.0``` to see the ETL pipeline in action.
 
 
 ### Running in AWS Cloud - Setup
