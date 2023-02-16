@@ -98,6 +98,9 @@ The team used a variety of tools in this project, including `Postgres`,`Python`,
 
 ### Architechture
 
+<img width="1103" alt="image" src="https://user-images.githubusercontent.com/1815429/219284593-c615eb95-4947-4d7d-a165-e73b9f537b42.png">
+
+
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
