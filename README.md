@@ -34,8 +34,11 @@
       <a href="#project-context">Project Context</a>
     </li>
    <li>
-      <a href="#architecture">Architecture</a>
-    </li>
+      <a href="#architecture">Architecture</a> 
+     <ul>
+        <li><a href="#etl-pipeline-steps">ETL Pipeline Steps</a></li>
+      </ul>
+   </li>
    <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
@@ -144,6 +147,17 @@ The team used a variety of tools in this project, including `Postgres`,`Python`,
 
 <img width="1103" alt="image" src="https://user-images.githubusercontent.com/1815429/219284593-c615eb95-4947-4d7d-a165-e73b9f537b42.png">
 
+
+### ETL Pipeline Steps
+
+1. An AWS EC2 Instance boots up and downloads the job_board etl pipeline app docker image from AWS ECR.
+2. AWS EC2 instance runs this docker image in a docker container.
+3. Docker container reads ENV file from AWS S3 Bucket.
+4. It sets the read contents and set them as environment variable making it available for ETL program during runtime.
+5. On a scheduled time, ECS cron job kicks in and starts the ETL pipeline.
+6. The python job_board ETL pipeline makes a REST API call to JSEARCH API to get jobs data specific to data roles namely data analyst, data engineering, data scientist.
+7. Response data from the API call is extracted and transformed, and also enriched with a local csv file containing regions information.
+8. This transformed and enriched data is loaded to Postgres DB in AWS RDS in 3 different tables namely `data_analyst_job`, `data_engineer_job` and `data_scientist_job`. The metadata logs of scheduled ETL runs and their statuses are saved to their corresponding metadata tables namely `metadata_log_data_analyst_job`, `metadata_log_data_engineer_job` and `metadata_log_data_scientist_job` respectively. 
 
 <!-- GETTING STARTED -->
 ## Getting Started
