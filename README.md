@@ -96,6 +96,12 @@ The team used a variety of tools in this project, including `Postgres`,`Python`,
 
 <p>The incremental approach that a live and incremental data pipeline solutions utilize also allows for the seamless addition of new data sources, as the system can be designed to identify and ingest new data automatically. This feature ensures that the system is scalable and can handle large amounts of data with minimal impact on performance. Overall, building a live and incremental data pipeline solution aims to create a scalable, reliable, and high-performing data processing system that enables data consumers to make informed decisions based on the latest data available.</p>
 
+## PROJECT CONTEXT
+
+<p>Technical recruiters and head-hunting firms in data-relevant fields are constantly in need of not only top candidates, but information about what positions companies are looking to fill for given data roles and all other details pertaining to these roles including salary, technologies, years of experience etc to list a few. With this ETL Job project, we would like to help Technical recruiters and HR people with accurate and relavant data related to data specific roles namely Data Analyst, Data Engineer and Data Scientist.
+</p>
+
+
 ### Architechture
 
 <img width="1103" alt="image" src="https://user-images.githubusercontent.com/1815429/219284593-c615eb95-4947-4d7d-a165-e73b9f537b42.png">
@@ -129,6 +135,45 @@ _Below is an example of how you can instruct your audience on installing and set
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+### Running Locally
+
+
+
+### Running in AWS Cloud - Setup
+
+
+Scheduled Task in ECS 
+<img width="1184" alt="image" src="https://user-images.githubusercontent.com/1815429/219291967-9170e0e6-5dc5-43b1-b69d-87b10e9f40fc.png">
+
+ECR
+<img width="1103" alt="image" src="https://user-images.githubusercontent.com/1815429/219292060-7fbb1595-00be-4ad0-80c2-a40c1f39cf1e.png">
+
+RDS
+<img width="1105" alt="image" src="https://user-images.githubusercontent.com/1815429/219291798-80016e01-22ba-48eb-9822-5043fa36cf51.png">
+
+IAM Role
+<img width="1062" alt="image" src="https://user-images.githubusercontent.com/1815429/219292235-68866722-e034-4956-8a0e-5d11e916c3fa.png">
+
+Env File in S3 Bucket
+<img width="1068" alt="image" src="https://user-images.githubusercontent.com/1815429/219292301-6e6e78cb-1315-4c24-a368-d0a2beab3017.png">
+
+Data Analyst Jobs Dataset
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/1815429/219293243-2a6c5465-feb2-408a-83c6-6b882c8fe419.png">
+
+Data Engineer Jobs Dataset
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/1815429/219293163-05dc94bb-5433-4677-93f1-715e1cbf2885.png">
+
+Data Scientist Jobs Dataset
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/1815429/219293048-fb79cf88-b441-4ad1-a645-af4a1b704849.png">
+
+Data Analyst Metadata Log
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/1815429/219292972-5fe8eee5-ec24-45d7-921a-b1fc04755a9f.png">
+
+Data Engineer Metadata Log
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/1815429/219292846-8622fa47-9ab7-4554-ba31-002c44fce703.png">
+
+Data Scientist Metadata Log
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/1815429/219292701-0e88fe5e-dcd9-448f-b970-85f822575301.png">
 
 
 <!-- USAGE EXAMPLES -->
