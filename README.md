@@ -96,28 +96,43 @@ The team used a variety of tools in this project, including `Postgres`,`Python`,
 
 <p>The incremental approach that a live and incremental data pipeline solutions utilize also allows for the seamless addition of new data sources, as the system can be designed to identify and ingest new data automatically. This feature ensures that the system is scalable and can handle large amounts of data with minimal impact on performance. Overall, building a live and incremental data pipeline solution aims to create a scalable, reliable, and high-performing data processing system that enables data consumers to make informed decisions based on the latest data available.</p>
 
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- PROJECT CONTEXT -->
 ## PROJECT CONTEXT
 
 <p>Technical recruiters and head-hunting firms in data-relevant fields are constantly in need of not only top candidates, but information about what positions companies are looking to fill for given data roles and all other details pertaining to these roles including salary, technologies, years of experience etc to list a few. With this ETL Job Board project, we would like to help Technical recruiters and head-hunting firms with accurate, relavant and up-to-date data related to data specific roles namely Data Analyst, Data Engineer and Data Scientist.
 </p>
 
 
-### Architechture
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- ARCHITECTURE -->
+## Architechture
 
 <img width="1103" alt="image" src="https://user-images.githubusercontent.com/1815429/219284593-c615eb95-4947-4d7d-a165-e73b9f537b42.png">
 
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* ??
-  ```sh
-  
-  ```
+_This project requires following softwares, packages and tools._
 
+  1. **Python 3.9** to write the **JOB_BOARD** ETL pipeline code
+  2. **Postgres DB 13** or above to store the extracted and transformed data from the **JOB_BOARD** ETL pipeline job
+  3. **Docker** to containerize the **JOB_BOARD** ETL pipeline application
+  4. **AWS** to host various components of the **JOB_BOARD** ETL Pipeline application
+
+  
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+_Below are the installation steps for setting up the job_board ETL app._
 
 1. Get a Paid API Key at [https://rapidapi.com/letscrape-6bRBa3QguO5/api/jsearch](https://rapidapi.com/letscrape-6bRBa3QguO5/api/jsearch)
 2. Clone the repo
@@ -128,36 +143,43 @@ _Below is an example of how you can instruct your audience on installing and set
    ```sh
    pip install  -r requirements.txt
    ```
-4. Enter your API in `???`
+4. Create ```set_python_path.sh``` / ```set_python_path.bat``` file  in ```src/``` folder with following contents
+   
+   **Linux / Mac**
    ```
-   API_KEY = 'ENTER YOUR API';
+   #!/bin/bash
+
+   export PYTHONPATH=`pwd`
    ```
+   
+   **Windows**
+   ```
+   set PYTHONPATH=%cd%
+   ```
+5. Create a ```config.sh``` / ```config.bat``` file in ```src/job_board``` folder with following content 
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+   **Linux / Mac**
+   ```
+   export api_key_id=<YOUR_JSEARCH_API_KEY>
+   export db_user=<YOUR_POSTGRES_DB_USERNAME>
+   export db_password=<YOUR_POSTGRES_DB_PASSWORD>
+   export db_server_name=<YOUR_POSTGRES_DB_SERVER_NAME>
+   export db_database_name=<YOUR_POSTGRES_DB_NAME>
+   export db_port=<YOUR_POSTGRES_DB_PORT>
+   ```
+   
+   **Windows**
+   ```
+   SET api_key_id=<YOUR_JSEARCH_API_KEY>
+   SET db_user=<YOUR_POSTGRES_DB_USERNAME>
+   SET db_password=<YOUR_POSTGRES_DB_PASSWORD>
+   SET db_server_name=<YOUR_POSTGRES_DB_SERVER_NAME>
+   SET db_database_name=<YOUR_POSTGRES_DB_NAME>
+   SET db_port=<YOUR_POSTGRES_DB_PORT>
+   ```
+6. Create a ```.env``` file with below contents in root project folder
 
-### Running Locally and in Docker
-
-#### Steps
-
-1. CD into ```src/``` folder
-2. Run ```. ./set_python_path.sh``` / ```set_python_path.bat``` file according to your Operating System to set **PYTHONPATH**
-3. Create a ```config.sh``` / ```config.bat``` file in ```src/job_board``` folder with following content 
-
-```sh
-export api_key_id=<YOUR_JSEARCH_API_KEY>
-export db_user=<YOUR_POSTGRES_DB_USERNAME>
-export db_password=<YOUR_POSTGRES_DB_PASSWORD>
-export db_server_name=localhost
-export db_database_name=job_board
-export db_port=5432
 ```
-4. Run ```config.sh``` / ```config.bat``` file to set additional environment variables needed to connect to ***JSEARCH API*** and ***POSTGRES DB***
-5. CD back to ```src/``` folder  
-6. Run ```python job_board/pipeline/job_board_pipeline.py``` to run the ETL pipeline locally.
-7. Alternatively instead of running steps 3 thru 6, we can run the ETL pipeline in docker container as follows. 
-8. Create a ```.env``` file with below contents in root project folder
-
-```sh
 api_key_id=<YOUR_JSEARCH_API_KEY>
 db_user=<YOUR_POSTGRES_DB_USERNAME>
 db_password=<YOUR_POSTGRES_DB_PASSWORD>
@@ -165,12 +187,27 @@ db_server_name=localhost
 db_database_name=job_board
 db_port=5432
 ```
-9. Run ```docker build -t job_board:1.0 .``` to create a docker image for Job Board ETL pipeline program
-10. Run a container using the above image using ```docker run --env-file=.env job_board:1.0``` to see the ETL pipeline in action.
 
+### Running Locally and in Docker
+
+#### Steps
+
+1. CD into ```src/``` folder
+2. Run ```. ./set_python_path.sh``` / ```set_python_path.bat``` file according to your Operating System to set **PYTHONPATH**
+3. Run ```config.sh``` / ```config.bat``` file to set additional environment variables needed to connect to **JSEARCH API** and **POSTGRES DB**
+4. CD back to ```src/``` folder  
+5. Run ```python job_board/pipeline/job_board_pipeline.py``` to run the ETL pipeline locally.
+6. Alternatively instead of running steps 3 thru 5, we can run the ETL pipeline in docker container as follows. 
+7. From the root folder containing ```Dockerfile```, Run ```docker build -t job_board:1.0 .``` to create a docker image for Job Board ETL pipeline program
+8. Run a container using the above image using ```docker run --env-file=.env job_board:1.0``` to see the ETL pipeline in action.
 
 ### Running in AWS Cloud - Setup
 
+1. Create IAM roles as shown in image.
+2. Create an RDS Instance with public visibility, inbound and outbound connections setup.
+3. Upload the .env file containing the JSEARCH API Key and AWS RDS Connection Details to an AWS S3 Bucket.
+4. Create docker file and upload the Docker image to AWS ECR.
+5. Create a Cron Schedule in AWS ECS to run the pipeline in a recurring schedule.
 
 #### Scheduled Task in ECS 
 
@@ -215,6 +252,9 @@ db_port=5432
 #### Data Scientist Metadata Log
 
 <img width="1440" alt="image" src="https://user-images.githubusercontent.com/1815429/219292701-0e88fe5e-dcd9-448f-b970-85f822575301.png">
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 <!-- USAGE EXAMPLES -->
