@@ -16,7 +16,7 @@
 |        1.0  |**Vasanth Nair**       |           |                 |
 |             |**Christian Freeman**  |           |                 |
 
-## **Project Plan**
+## **Index**
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
@@ -27,11 +27,28 @@
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
-    <li>
+   <li>
+      <a href="#goals">Goals</a>
+    </li>
+   <li>
+      <a href="#project-context">Project Context</a>
+    </li>
+   <li>
+      <a href="#architecture">Architecture</a>
+    </li>
+   <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
+      </ul>
+      <ul>
         <li><a href="#installation">Installation</a></li>
+      </ul>
+      <ul>
+        <li><a href="#running-locally-and-in-a-docker-container">Running Locally and in a Docker Container</a></li>
+      </ul>
+      <ul>
+        <li><a href="#running-in-aws-cloud---setup">Running in AWS Cloud - Setup</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
@@ -50,11 +67,10 @@
 
 
 This project aims to build a scalable and efficient ETL pipeline that can incrementally extract Jobs data 
-(mainly data-related jobs like data analyst, data engineer, and data scientist) from an API. The project requires
+(mainly data-related jobs like data analyst, data engineer, and data scientist) from an external API. The project requires
 a solution that can handle large amounts of data while ensuring the integrity and accuracy of the information. 
 The product will be a centralized repository of live data that can be easily queried and analyzed. Using a Postgres database, 
-we ensure that the data is stored in a structured and secure manner, allowing for efficient retrieval and manipulation of the information. 
-The final result should be hosted on AWS, taking advantage of its various services to ensure the robustness and reliability of the pipeline. 
+we ensure that the data is stored in a structured and secure manner, allowing for efficient retrieval and manipulation of the information. The final result should be hosted on AWS, taking advantage of its various services to ensure the robustness and reliability of the pipeline. 
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -119,6 +135,9 @@ The team used a variety of tools in this project, including `Postgres`,`Python`,
 
 <img width="1103" alt="image" src="https://user-images.githubusercontent.com/1815429/219284593-c615eb95-4947-4d7d-a165-e73b9f537b42.png">
 
+
+<!-- GETTING STARTED -->
+## Getting Started
 
 ### Prerequisites
 
@@ -188,7 +207,7 @@ db_database_name=job_board
 db_port=5432
 ```
 
-### Running Locally and in Docker
+### Running Locally and in a Docker Container
 
 #### Steps
 
