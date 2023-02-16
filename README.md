@@ -98,7 +98,7 @@ The team used a variety of tools in this project, including `Postgres`,`Python`,
 
 ## PROJECT CONTEXT
 
-<p>Technical recruiters and head-hunting firms in data-relevant fields are constantly in need of not only top candidates, but information about what positions companies are looking to fill for given data roles and all other details pertaining to these roles including salary, technologies, years of experience etc to list a few. With this ETL Job project, we would like to help Technical recruiters and HR people with accurate and relavant data related to data specific roles namely Data Analyst, Data Engineer and Data Scientist.
+<p>Technical recruiters and head-hunting firms in data-relevant fields are constantly in need of not only top candidates, but information about what positions companies are looking to fill for given data roles and all other details pertaining to these roles including salary, technologies, years of experience etc to list a few. With this ETL Job Board project, we would like to help Technical recruiters and head-hunting firms with accurate, relavant and up-to-date data related to data specific roles namely Data Analyst, Data Engineer and Data Scientist.
 </p>
 
 
@@ -135,44 +135,98 @@ _Below is an example of how you can instruct your audience on installing and set
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Running Locally
+### Running Locally and in Docker
 
+#### Steps
+
+> 1. CD into src/ folder
+> 
+> 2. Run set_python_path.sh / set_python_path.bat file according to your Operating System to set PYTHONPATH
+> 
+> 3. Create a config.sh / config.bat file in src/job_board folder with following content 
+>
+
+```
+export api_key_id=<YOUR_JSEARCH_API_KEY>
+export db_user=<YOUR_POSTGRES_DB_USERNAME>
+export db_password=<YOUR_POSTGRES_DB_PASSWORD>
+export db_server_name=localhost
+export db_database_name=job_board
+export db_port=5432
+```
+
+>
+> 4. Run config.sh / config.bat file to set additional environment variables needed to connect to JSEARCH API and DB
+>  
+> 5. CD back to src/ folder
+>  
+> 6. Run python job_board/pipeline/job_board_pipeline.py to run the ETL pipeline locally
+>  
+> 7. Alternatively instead of steps 3 thru 6, we can use run the ETL pipeline in docker as follows. Create a .env file with below contents in root project folder
+>  
+>
+
+```
+api_key_id=<YOUR_JSEARCH_API_KEY>
+db_user=<YOUR_POSTGRES_DB_USERNAME>
+db_password=<YOUR_POSTGRES_DB_PASSWORD>
+db_server_name=localhost
+db_database_name=job_board
+db_port=5432
+```
+
+>
+> 8. Run docker build -t job_board:1.0 . to create a docker image for Job Board ETL pipeline program
+>
+> 9. Run a container using the above image using docker run --env-file=.env job_board:1.0 to see the ETL pipeline in action.
+> 
 
 
 ### Running in AWS Cloud - Setup
 
 
-Scheduled Task in ECS 
+#### Scheduled Task in ECS 
+
 <img width="1184" alt="image" src="https://user-images.githubusercontent.com/1815429/219291967-9170e0e6-5dc5-43b1-b69d-87b10e9f40fc.png">
 
-ECR
+#### ECR hosting Job Board Docker Image
+
 <img width="1103" alt="image" src="https://user-images.githubusercontent.com/1815429/219292060-7fbb1595-00be-4ad0-80c2-a40c1f39cf1e.png">
 
-RDS
+#### RDS Database Instance
+
 <img width="1105" alt="image" src="https://user-images.githubusercontent.com/1815429/219291798-80016e01-22ba-48eb-9822-5043fa36cf51.png">
 
-IAM Role
+#### IAM Roles Used
+
 <img width="1062" alt="image" src="https://user-images.githubusercontent.com/1815429/219292235-68866722-e034-4956-8a0e-5d11e916c3fa.png">
 
-Env File in S3 Bucket
+#### Env File in S3 Bucket
+
 <img width="1068" alt="image" src="https://user-images.githubusercontent.com/1815429/219292301-6e6e78cb-1315-4c24-a368-d0a2beab3017.png">
 
-Data Analyst Jobs Dataset
+#### Data Analyst Jobs Dataset
+
 <img width="1440" alt="image" src="https://user-images.githubusercontent.com/1815429/219293243-2a6c5465-feb2-408a-83c6-6b882c8fe419.png">
 
-Data Engineer Jobs Dataset
+#### Data Engineer Jobs Dataset
+
 <img width="1440" alt="image" src="https://user-images.githubusercontent.com/1815429/219293163-05dc94bb-5433-4677-93f1-715e1cbf2885.png">
 
-Data Scientist Jobs Dataset
+#### Data Scientist Jobs Dataset
+
 <img width="1440" alt="image" src="https://user-images.githubusercontent.com/1815429/219293048-fb79cf88-b441-4ad1-a645-af4a1b704849.png">
 
-Data Analyst Metadata Log
+#### Data Analyst Metadata Log
+
 <img width="1440" alt="image" src="https://user-images.githubusercontent.com/1815429/219292972-5fe8eee5-ec24-45d7-921a-b1fc04755a9f.png">
 
-Data Engineer Metadata Log
+#### Data Engineer Metadata Log
+
 <img width="1440" alt="image" src="https://user-images.githubusercontent.com/1815429/219292846-8622fa47-9ab7-4554-ba31-002c44fce703.png">
 
-Data Scientist Metadata Log
+#### Data Scientist Metadata Log
+
 <img width="1440" alt="image" src="https://user-images.githubusercontent.com/1815429/219292701-0e88fe5e-dcd9-448f-b970-85f822575301.png">
 
 
